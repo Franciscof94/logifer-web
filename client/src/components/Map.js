@@ -7,7 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MapGL = () => {
   const classes = useStyles()
-  const MAPBOX_TOKEN = 'pk.eyJ1IjoiZnJhbmNpc2NvZjk0IiwiYSI6ImNreHA4cHZibjRmajEycHE5eDl1YzBoZTcifQ.k8goyzTeqcqqztPmFlKUzg'
+  const MAPBOX_TOKEN = 'pk.eyJ1IjoiZnJhbmNpc2NvZjk0IiwiYSI6ImNsNDl2bjZ1aDA1b2czYnBxaDZhZjdhcHAifQ.B-6IzqyCb3phLpJQzy3G4Q'
   return (
     <MapProvider>
        <Map
