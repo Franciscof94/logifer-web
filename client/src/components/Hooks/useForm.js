@@ -29,9 +29,8 @@ export const useForm = (initialForm, validateForm) => {
 
     if (Object.keys(errors).length === 0) {
       axios
-        .post("https://polar-thicket-79317.herokuapp.com/", data)
+        .post("https://polar-thicket-79317.herokuapp.com/api/form", data)
         .then((res) => {
-          console.log(res, data)
           setResponse(true);
           setForm(initialForm);
         })
