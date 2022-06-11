@@ -31,6 +31,7 @@ export const useForm = (initialForm, validateForm) => {
       axios
         .post("https://polar-thicket-79317.herokuapp.com/", data)
         .then((res) => {
+          console.log(res, data)
           setResponse(true);
           setForm(initialForm);
         })
