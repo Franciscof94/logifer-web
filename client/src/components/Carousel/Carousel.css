@@ -1,0 +1,13 @@
+.root {
+  margin: 25px;
+  padding: 20px;
+}
+
+.root:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.markImage {
+  height: 90px;
+  object-fit: contain;
+}

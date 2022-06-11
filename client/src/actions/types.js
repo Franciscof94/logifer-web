@@ -1,0 +1,3 @@
+export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
+export const FILTER_CATEGORY = "FILTER_CATEGORY";
+export const LOADER = "LOADER"
