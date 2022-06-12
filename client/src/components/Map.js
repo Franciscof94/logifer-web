@@ -3,7 +3,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import { makeStyles } from '@material-ui/styles';
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNpc2NvZjk0IiwiYSI6ImNsMzZhcGl2ZDBkanMzb3MyanJoMDI3bjAifQ.8ekCQJnVMIiXcGZieo9jPA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNpc2NvZjk0IiwiYSI6ImNsNDl2bjZ1aDA1b2czYnBxaDZhZjdhcHAifQ.B-6IzqyCb3phLpJQzy3G4Q';
 
 export default function MapGL() {
   const classes = useStyles()
