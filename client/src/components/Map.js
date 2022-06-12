@@ -3,10 +3,10 @@ import { ImLocation2 } from "react-icons/im";
 import Map, { Marker, NavigationControl } from "react-map-gl";
 import { MapProvider } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+/* import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 mapboxgl.workerClass = MapboxWorker;
-
+ */
 
 const MapGL = () => {
 
