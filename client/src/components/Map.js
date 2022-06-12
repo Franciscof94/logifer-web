@@ -9,22 +9,23 @@ export default function MapGL() {
   const classes = useStyles()
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
+  const [lng, setLng] = useState(-57.685241174415374);
+  const [lat, setLat] = useState(-36.299932952694);
+  const [zoom, setZoom] = useState(15);
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    if (map.current) return; 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [lng, lat],
       zoom: zoom
     });
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current);
   });
 
   useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
+    if (!map.current) return; 
     map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
@@ -44,7 +45,8 @@ export default function MapGL() {
 
 const useStyles = makeStyles((theme) => ({
   mapContainer: {
-    height: "400px"
+    height: "350px",
+    width: "350px"
   },
   sidebar: {
     backgroundColor: "rgba(35, 55, 75, 0.9)",
