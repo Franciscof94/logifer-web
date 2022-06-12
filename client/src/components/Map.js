@@ -5,8 +5,8 @@ import { MapProvider } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 /* import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
-mapboxgl.workerClass = MapboxWorker;
- */
+mapboxgl.workerClass = MapboxWorker; */
+
 
 const MapGL = () => {
 
