@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     display: "flex",
     justifyContent: "center",
+
   },
   image: {
     width: "100%",
@@ -119,9 +120,6 @@ const useStyles = makeStyles((theme) => ({
     },
     phoneContainer: {
       display: "none",
-    },
-    MyLoader_spinner: {
-      left: '35%'
     }
   },
 }));

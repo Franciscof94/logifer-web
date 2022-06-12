@@ -126,13 +126,24 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
     appBar: {
-      height: "135px",
+      height: "112px",
     },
     logoBackground: {
-      top: "68px",
+      top: "58px",
+      height: "90px",
+      width: "90px"
+    },
+    logoBackgroundContainer: {
+      height: "75px",
+      width: "75px",
+    },
+    logo: {
+      height: "65px",
+      maxWidth: "65px",
     },
     hamburger: {
       display: "block",
+      top: "3.1rem"
     },
     menuContainer: {
       width: "0",

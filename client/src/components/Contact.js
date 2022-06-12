@@ -3,13 +3,16 @@ import React from "react";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
+import { useResize } from "./Hooks/useResize";
 
 const Contact = () => {
   const classes = useStyles();
-
+  const { isPhone } = useResize()
   return (
     <div className={classes.contact}>
-      <Typography variant='h3' className={classes.contactTitle}>CONTACTO</Typography>
+      <Typography variant="h3" className={classes.contactTitle}>
+        CONTACTO
+      </Typography>
       <div className={classes.phone}>
         <FiPhoneCall fontSize={25} />
         <div>
@@ -27,7 +30,9 @@ const Contact = () => {
       </div>
       <div className={classes.location}>
         <GoLocation fontSize={25} />
-        <span>Mitre 1775 Dolores (7100) - Prov. Buenos Aires</span>
+        <div>
+          <span>Mitre 1775 Dolores (7100)</span><span>{isPhone ? "" : ' - '}Prov. Buenos Aires</span>
+        </div>
       </div>
     </div>
   );
@@ -42,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
   },
   contactTitle: {
     margin: "3px 0",
-    color: 'white',
-    fontSize: '2.4rem'
+    color: "white",
+    fontSize: "2.4rem",
   },
   phone: {
     display: "flex",
@@ -72,24 +77,29 @@ const useStyles = makeStyles((theme) => ({
   location: {
     display: "flex",
     alignItems: "center",
-    "& span": {
-
-    },
   },
   [theme.breakpoints.down(768)]: {
     contactTitle: {
-      fontSize: '1.5rem'
+      fontSize: "1.5rem",
     },
     phone: {
-      fontSize: '0.9rem'
+      fontSize: "0.9rem",
     },
     email: {
-      fontSize: '0.9rem'
+      fontSize: "0.9rem",
     },
     location: {
-      fontSize: '0.9rem'
-    }
-  }
+      fontSize: "0.9rem",
+      "& div": {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        "& span": {
+          marginLeft: "10px",
+        }
+      }
+    },
+  },
 }));
 
 export default Contact;

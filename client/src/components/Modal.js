@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '400',
+    width: '350px',
     backgroundColor: 'white',
     boxShadow: '24',
     "& div:first-child":{

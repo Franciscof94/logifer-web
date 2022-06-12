@@ -107,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.down(768)]: {
     root: {
+      margin: "3rem 0",
       "& h3": {
         fontSize: "1.5rem",
       },

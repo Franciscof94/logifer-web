@@ -12,7 +12,6 @@ import Bolsones from "../images/bolson.jpg";
 import FormModal from "./Modal.js";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-
 const initialForm = {
   name: "",
   email: "",
@@ -67,115 +66,118 @@ const Form = () => {
 
   return (
     <HelmetProvider>
-    <div className={classes.main}>
-      <Helmet>
-        <title>Contacto - Ferraro Materiales</title>
-        <meta
-          name="description"
-          content="Venta de materiales para la construcción en la ciudad de Dolores - Pcia de Buenos Aires. Visita ahora nuestra web!"
-        />
-      </Helmet>
-      <Typography className={classes.title} variant="h3">
-        DEJANOS TU MENSAJE
-      </Typography>
-      <Paper
-        elevation={5}
-        sx={{
-          margin: "auto",
-          maxWidth: 500,
-          flexGrow: 1,
-          backgroundColor: (theme) =>
-            theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-        }}
-        className={classes.paper}
-      >
-        <Container className={classes.root}>
-          <div className={classes.formContainer}>
-            <form onSubmit={handleSubmit}>
-              <div>
-                <label className={classes.label}>Nombre y apellido</label>
-                <TextField
+      <div className={classes.main}>
+        <Helmet>
+          <title>Contacto - Ferraro Materiales</title>
+          <meta
+            name="description"
+            content="Venta de materiales para la construcción en la ciudad de Dolores - Pcia de Buenos Aires. Visita ahora nuestra web!"
+          />
+        </Helmet>
+        <Typography className={classes.title} variant="h3">
+          DEJANOS TU MENSAJE
+        </Typography>
+        <Paper
+          elevation={5}
+          sx={{
+            margin: "auto",
+            maxWidth: 500,
+            flexGrow: 1,
+            backgroundColor: (theme) =>
+              theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+          }}
+          className={classes.paper}
+        >
+          <Container className={classes.root}>
+            <div className={classes.formContainer}>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <label className={classes.label}>Nombre y apellido</label>
+                  <TextField
+                    fullWidth
+                    id="name"
+                    variant="outlined"
+                    type="text"
+                    error={form.name.length > 0 && errors.name}
+                    name="name"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className={classes.label}>Email</label>
+                  <TextField
+                    fullWidth
+                    id="email"
+                    variant="outlined"
+                    error={form.email.length > 0 && errors.email}
+                    type="email"
+                    name="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className={classes.label}>Asunto</label>
+                  <TextField
+                    fullWidth
+                    id="subject"
+                    error={form.subject.length > 0 && errors.subject}
+                    variant="outlined"
+                    type="text"
+                    name="subject"
+                    required
+                    value={form.subject}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className={classes.label}>Mensaje</label>
+                  <TextField
+                    fullWidth
+                    id="filled-multiline-static"
+                    error={form.message.length > 0 && errors.message}
+                    multiline
+                    minRows="4"
+                    variant="outlined"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                  />
+                </div>
+                <Button
+                  disabled={!isEnabled}
                   fullWidth
-                  id="name"
-                  variant="outlined"
-                  type="text"
-                  error={form.name.length > 0 && errors.name}
-                  name="name"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className={classes.label}>Email</label>
-                <TextField
-                  fullWidth
-                  id="email"
-                  variant="outlined"
-                  error={form.email.length > 0 && errors.email}
-                  type="email"
-                  name="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className={classes.label}>Asunto</label>
-                <TextField
-                  fullWidth
-                  id="subject"
-                  error={form.subject.length > 0 && errors.subject}
-                  variant="outlined"
-                  type="text"
-                  name="subject"
-                  required
-                  value={form.subject}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className={classes.label}>Mensaje</label>
-                <TextField
-                  fullWidth
-                  id="filled-multiline-static"
-                  error={form.message.length > 0 && errors.message}
-                  multiline
-                  minRows="4"
-                  variant="outlined"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                />
-              </div>
-              <Button
-                disabled={!isEnabled}
-                fullWidth
-                variant="contained"
-                onClick={handleSubmit}
-                color="primary"
-              >
-                Enviar
-              </Button>
-            </form>
-          </div>
-          <div className={classes.imgContainer}>
-            <div className={classes.container}>
-              <div className={classes.contact}>
-                <Contact />
-              </div>
-              <div className={classes.fadeBottom}></div>
+                  variant="contained"
+                  onClick={handleSubmit}
+                  color="primary"
+                >
+                  Enviar
+                </Button>
+              </form>
             </div>
-          </div>
-        </Container>
-        {response && <FormModal setResponse={setResponse} />}
-      </Paper>
-    </div>
+            <div className={classes.imgContainer}>
+              <div className={classes.container}>
+                <div className={classes.contact}>
+                  <Contact />
+                </div>
+                <div className={classes.fadeBottom}></div>
+              </div>
+            </div>
+          </Container>
+          {response && <FormModal setResponse={setResponse} />}
+        </Paper>
+      </div>
     </HelmetProvider>
   );
 };
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    padding: "0 1.8rem",
+  },
   title: {
     margin: "63px 0 0 0",
     fontSize: "2rem",
@@ -185,10 +187,6 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     padding: "0",
-    [theme.breakpoints.down("sm")]: {
-      gridTemplateColumns: "none",
-      gridTemplateRows: "1fr 1fr",
-    },
   },
   formContainer: {
     margin: "1rem",
@@ -199,9 +197,9 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "start",
     },
   },
-  label : {
+  label: {
     fontSize: "1.1rem",
-        fontWeight: "bold",
+    fontWeight: "bold",
   },
   imgContainer: {
     margin: "1rem",
@@ -270,6 +268,17 @@ const useStyles = makeStyles((theme) => ({
       "& img": {
         width: "100%",
       },
+    },
+  },
+  [theme.breakpoints.down(768)]: {
+    main: {
+      padding: "0",
+    },
+    container: {
+      minHeight: "350px",
+    },
+    root: {
+      gridTemplateColumns: "none",
     },
   },
 }));

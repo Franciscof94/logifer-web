@@ -3,9 +3,13 @@ import { ImLocation2 } from "react-icons/im";
 import Map, { Marker, NavigationControl } from "react-map-gl";
 import { MapProvider } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+mapboxgl.workerClass = MapboxWorker;
+
 
 const MapGL = () => {
-  const classes = useStyles();
+
   const MAPBOX_TOKEN =
     "pk.eyJ1IjoiZnJhbmNpc2NvZjk0IiwiYSI6ImNsNGFiNTlmbzBibGUzY24ydHhyY3RkM3EifQ.6aFlyNcPIBUQLq7mJYIQyA";
   return (

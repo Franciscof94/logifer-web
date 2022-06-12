@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     ulContainer: {
       position: "fixed",
       left: "0",
-      top: "8.37rem",
+      top: "7.01rem",
       width: "100%",
       backgroundColor: "#3342b1",
       "& ul": {
